@@ -102,6 +102,9 @@ body {
   text-align: center;
   margin-top: 40%;
 }
+.register {
+  font-size: 4em;
+}
 
 a.button7:active {
   box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),

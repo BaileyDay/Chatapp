@@ -25,7 +25,7 @@ class Homepage extends Component {
           </a>
         </div>
         <div className="buttonContainer2">
-          <a href="something" class="button7 buttonContainer" id="register">
+          <a href="/register" class="button7 buttonContainer" id="register">
             Register
           </a>
         </div>
