@@ -19,8 +19,8 @@ exports.postSignup = (req, res, next) => {
         });
         return user.save();
       })
-      .then((result) => {
-        res.redirect("/login");
+      .then(() => {
+        res.status;
       });
   });
 };
