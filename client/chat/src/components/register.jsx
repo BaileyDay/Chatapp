@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import "../css/main.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useStore } from "./store";
 
 function Register() {
   const [username, setUsername] = useState(0);
   const [password, setPassword] = useState(0);
+  const { state, dispatch } = useStore();
+
   let history = useHistory();
 
-  const createUser = async (e) => {
+  const createUser = (e) => {
     e.preventDefault();
-    await axios
+    axios
       .post("http://localhost:3002/register", {
         username: username,
         password: password,
@@ -19,6 +22,7 @@ function Register() {
         console.log(response);
         if (response.status === 200) {
           history.push("/login");
+          dispatch({ type: "RegistrationSucceeded" });
         }
       })
       .catch(function (error) {

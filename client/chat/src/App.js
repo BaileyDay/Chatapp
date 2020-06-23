@@ -5,30 +5,11 @@ import "./components/homepage";
 import Homepage from "./components/homepage";
 import Login from "./components/login";
 import Register from "./components/register";
-
-const defaultGlobalState = {
-  registrationSuccessfull: false,
-};
-const globalStateContext = React.createContext(defaultGlobalState);
-const dispatchStateContext = React.createContext(undefined);
-
-const GlobalStateProvider = ({ children }) => {
-  const [state, dispatch] = React.useReducer(
-    (state, newValue) => ({ ...state, ...newValue }),
-    defaultGlobalState
-  );
-  return (
-    <globalStateContext.Provider value={state}>
-      <dispatchStateContext.Provider value={dispatch}>
-        {children}
-      </dispatchStateContext.Provider>
-    </globalStateContext.Provider>
-  );
-};
+import { StoreProvider } from "./components/store";
 
 function App() {
   return (
-    <GlobalStateProvider>
+    <StoreProvider>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -43,7 +24,7 @@ function App() {
           <Route path="*"></Route>
         </Switch>
       </Router>
-    </GlobalStateProvider>
+    </StoreProvider>
   );
 }
 
