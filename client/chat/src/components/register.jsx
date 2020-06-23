@@ -7,35 +7,43 @@ import { useStore } from "./store";
 function Register() {
   const [username, setUsername] = useState(0);
   const [password, setPassword] = useState(0);
+  const [confirmPassword, setConfirmPassword] = useState(0);
   const { state, dispatch } = useStore();
 
   let history = useHistory();
 
   const createUser = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:3002/register", {
-        username: username,
-        password: password,
-      })
-      .then(function (response) {
-        console.log(response);
-        if (response.status === 200) {
-          history.push("/login");
-          dispatch({ type: "RegistrationSucceeded" });
-        }
-      })
-      .catch(function (error) {
-        console.log(error.response.status);
-        if (error.response.status === 409) {
-          history.go(0);
-        }
-      });
+    if (password === confirmPassword) {
+      axios
+        .post("http://localhost:3002/register", {
+          username: username,
+          password: password,
+        })
+        .then(function (response) {
+          console.log(response);
+          if (response.status === 200) {
+            history.push("/login");
+            dispatch({ type: "RegistrationSucceeded" });
+          }
+        })
+        .catch(function (error) {
+          console.log(error.response.status);
+          if (error.response.status === 409) {
+            history.go(0);
+          }
+        });
+    } else {
+      dispatch({ type: "PasswordsDontMatch" });
+    }
   };
 
   return (
     <div className="container">
       <h1 className="loginLogo register">Register</h1>
+      {state.errorMessage && (
+        <h3 className="errorMessage">{state.errorMessage}</h3>
+      )}
       <form>
         <div>
           <input
@@ -46,13 +54,17 @@ function Register() {
         </div>
         <div>
           <input
-            type="text"
+            type="password"
             placeholder="Enter Password"
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
         <div>
-          <input type="text" placeholder="Confirm Password" />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            onChange={(event) => setConfirmPassword(event.target.value)}
+          />
         </div>
         <button className="loginButton" onClick={createUser}>
           Register

@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <div className="container">
       <h1 className="loginLogo">Login</h1>
-      <h3 className="loginMessage">{state.message}</h3>
+      {state.message && <h3 className="loginMessage">{state.message}</h3>}
       <form>
         <div>
           <input type="text" placeholder="Username" />

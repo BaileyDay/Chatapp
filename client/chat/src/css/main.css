@@ -119,6 +119,18 @@ a.button7:active {
   width: 75%;
   margin: auto;
   padding: 5%;
+  border-radius: 5px;
+}
+
+.errorMessage {
+  font-size: 1em;
+  color: white;
+  background-color: rgb(213, 94, 81);
+  border: 2px solid rgb(145, 39, 39);
+  width: 75%;
+  margin: auto;
+  padding: 5%;
+  border-radius: 5px;
 }
 
 @media all and (max-width: 30em) {

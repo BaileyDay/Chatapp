@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 
 const StoreContext = createContext();
-const initialState = { registered: false, message: "" };
+const initialState = { registered: false, message: "", errorMessage: "" };
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -10,10 +10,9 @@ const reducer = (state, action) => {
         registered: true,
         message: "You have successfully registered! Please login.",
       };
-    case "RegistrationCleared":
+    case "PasswordsDontMatch":
       return {
-        count: state.count - 1,
-        message: action.message,
+        errorMessage: "Passwords did not match, please try again.",
       };
     case "reset":
       return {
