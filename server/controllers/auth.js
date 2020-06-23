@@ -8,7 +8,7 @@ exports.postSignup = (req, res, next) => {
   const confirmPassword = req.body.confirmPassword;
   User.findOne({ username: username }).then((userDoc) => {
     if (userDoc) {
-      return res.redirect("/register");
+      res.status(409).send("User already exists");
     }
     return bcrypt
       .hash(password, 12)
@@ -20,7 +20,7 @@ exports.postSignup = (req, res, next) => {
         return user.save();
       })
       .then(() => {
-        res.status;
+        res.status(200).send("Successfull registration");
       });
   });
 };

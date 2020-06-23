@@ -8,18 +8,26 @@ function Register() {
   const [password, setPassword] = useState(0);
   let history = useHistory();
 
-  function createUser(e) {
+  const createUser = async (e) => {
     e.preventDefault();
-    axios
+    await axios
       .post("http://localhost:3002/register", {
         username: username,
         password: password,
       })
+      .then(function (response) {
+        console.log(response);
+        if (response.status === 200) {
+          history.push("/login");
+        }
+      })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.status);
+        if (error.response.status === 409) {
+          history.go(0);
+        }
       });
-    history.push("/login");
-  }
+  };
 
   return (
     <div className="container">
