@@ -30,7 +30,7 @@ function Register() {
         .catch(function (error) {
           console.log(error.response.status);
           if (error.response.status === 409) {
-            history.go(0);
+            dispatch({ type: "InvalidUsername" });
           }
         });
     } else {

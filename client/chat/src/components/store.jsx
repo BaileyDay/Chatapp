@@ -14,10 +14,9 @@ const reducer = (state, action) => {
       return {
         errorMessage: "Passwords did not match, please try again.",
       };
-    case "reset":
+    case "InvalidUsername":
       return {
-        count: 0,
-        message: action.message,
+        errorMessage: "Username is already taken, please try again.",
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

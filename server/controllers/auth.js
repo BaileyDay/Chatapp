@@ -21,6 +21,11 @@ exports.postSignup = (req, res, next) => {
       })
       .then(() => {
         res.status(200).send("Successfull registration");
+        const payload = {
+          user: {
+            id: user.id,
+          },
+        };
       });
   });
 };
