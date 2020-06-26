@@ -21,7 +21,7 @@ const Login = () => {
         console.log(response);
         if (response.status === 200) {
           history.push("/chat");
-          dispatch({ type: "loginSucceeded" });
+          dispatch({ type: "loginSucceeded", payload: response.data });
         }
       })
       .catch(function (error) {

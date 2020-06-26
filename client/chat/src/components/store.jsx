@@ -12,6 +12,7 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
+  const { payload } = action;
   switch (action.type) {
     case "RegistrationSucceeded":
       return {
@@ -25,9 +26,21 @@ const reducer = (state, action) => {
       return {
         errorMessage: "Username is already taken, please try again.",
       };
-    case "LoginSucceeded":
+    case "loginSucceeded":
+      localStorage.setItem("token", payload.token);
       return {
-        errorMessage: "Username is already taken, please try again.",
+        ...state,
+        ...payload,
+        isAuthenticated: true,
+        loading: false,
+        user: payload,
+      };
+    case "getUserData":
+      return {
+        ...state,
+        ...payload,
+        user: payload,
+        message: "hello",
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

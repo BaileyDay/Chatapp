@@ -6,6 +6,7 @@ import Homepage from "./components/homepage";
 import Login from "./components/login";
 import Register from "./components/register";
 import { StoreProvider } from "./components/store";
+import Chat from "../src/components/chat";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/chat">
+            <Chat />
           </Route>
           <Route path="*"></Route>
         </Switch>
