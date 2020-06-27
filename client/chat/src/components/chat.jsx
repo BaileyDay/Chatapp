@@ -28,6 +28,7 @@ const Chat = () => {
     <div>
       <h3 className="welcomeMessage">Welcome, {state.username}</h3>
       <div>
+        <div className="messageContainer"></div>
         <form>
           <div className="formContainer">
             <textarea id="chatBar" rows="1" cols="40"></textarea>
