@@ -40,7 +40,6 @@ const reducer = (state, action) => {
         ...state,
         ...payload,
         user: payload,
-        message: "hello",
         isAuthenticated: true,
       };
     default:

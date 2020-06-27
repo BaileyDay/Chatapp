@@ -39,37 +39,39 @@ function Register() {
   };
 
   return (
-    <div className="container">
-      <h1 className="loginLogo register">Register</h1>
-      {state.errorMessage && (
-        <h3 className="errorMessage">{state.errorMessage}</h3>
-      )}
-      <form>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            onChange={(event) => setConfirmPassword(event.target.value)}
-          />
-        </div>
-        <button className="loginButton" onClick={createUser}>
-          Register
-        </button>
-      </form>
+    <div className="outerContainer">
+      <div className="container">
+        <h1 className="loginLogo register">Register</h1>
+        {state.errorMessage && (
+          <h3 className="errorMessage">{state.errorMessage}</h3>
+        )}
+        <form>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={(event) => setConfirmPassword(event.target.value)}
+            />
+          </div>
+          <button className="loginButton" onClick={createUser}>
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

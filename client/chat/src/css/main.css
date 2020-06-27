@@ -85,6 +85,10 @@ h3 {
   color: white;
 }
 body {
+  background-color: #141e30;
+  background: linear-gradient(to right, #24243e, #141e30, #0f0c29);
+}
+.outerContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +96,6 @@ body {
   background-color: #141e30;
   background: linear-gradient(to right, #24243e, #141e30, #0f0c29);
 }
-
 .container {
   text-align: center;
 }
@@ -133,6 +136,9 @@ a.button7:active {
   margin: auto;
   padding: 5%;
   border-radius: 5px;
+}
+.welcomeMessage {
+  justify-content: start;
 }
 
 @media all and (max-width: 30em) {

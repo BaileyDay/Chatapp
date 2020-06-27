@@ -17,17 +17,19 @@ class Homepage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>Chat App</h1>
-        <div className="buttonContainer2">
-          <a href="/login" class="button7 buttonContainer" id="login">
-            Login
-          </a>
-        </div>
-        <div className="buttonContainer2">
-          <a href="/register" class="button7 buttonContainer" id="register">
-            Register
-          </a>
+      <div className="outerContainer">
+        <div className="container">
+          <h1>Chat App</h1>
+          <div className="buttonContainer2">
+            <a href="/login" class="button7 buttonContainer" id="login">
+              Login
+            </a>
+          </div>
+          <div className="buttonContainer2">
+            <a href="/register" class="button7 buttonContainer" id="register">
+              Register
+            </a>
+          </div>
         </div>
       </div>
     );

@@ -32,28 +32,30 @@ const Login = () => {
       });
   };
   return (
-    <div className="container">
-      <h1 className="loginLogo">Login</h1>
-      {state.message && <h3 className="loginMessage">{state.message}</h3>}
-      <form>
-        <div>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </div>
-        <button className="loginButton" onClick={loginUser}>
-          Login
-        </button>
-      </form>
+    <div className="outerContainer">
+      <div className="container">
+        <h1 className="loginLogo">Login</h1>
+        {state.message && <h3 className="loginMessage">{state.message}</h3>}
+        <form>
+          <div>
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+          <button className="loginButton" onClick={loginUser}>
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
