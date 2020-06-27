@@ -64,9 +64,14 @@ const Chat = () => {
         {data && (
           <div className="messageContainer">
             {data.map((user) => (
-              <p>
-                {user.username}: {user.message}
-              </p>
+              <div className="singleMessage">
+                <div>
+                  <p className="messageUsername">{user.username}</p>
+                </div>
+                <div>
+                  <p className="userMessage">{user.message}</p>
+                </div>
+              </div>
             ))}
           </div>
         )}
