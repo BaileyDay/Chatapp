@@ -187,6 +187,16 @@ input:focus {
   display: flex;
   justify-content: center;
 }
+
+.messageContainer {
+  background-color: #273857;
+  padding: 1%;
+  margin: 1.5%;
+  margin-bottom: 3%;
+  color: white;
+  border: 0.5px solid #425983;
+  border-radius: 2px;
+}
 @media all and (max-width: 30em) {
    a.button7 {
     display: block;
