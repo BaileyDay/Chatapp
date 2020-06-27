@@ -25,6 +25,18 @@ const Chat = () => {
     fetchData();
   }, []);
   console.log(state.username);
-  return <h3>Welcome, {state.username}</h3>;
+  return (
+    <div>
+      <h3>Welcome, {state.username}</h3>
+      <div>
+        <form>
+          <div>
+            <input></input>
+            <button>Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 export default Chat;
