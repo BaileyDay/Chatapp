@@ -28,10 +28,10 @@ const Chat = () => {
     <div>
       <h3 className="welcomeMessage">Welcome, {state.username}</h3>
       <div>
-        <form className="formContainer">
-          <div>
+        <form>
+          <div className="formContainer">
             <textarea id="chatBar" rows="1" cols="40"></textarea>
-            <button>Send Message</button>
+            <button className="sendButton">Send</button>
           </div>
         </form>
       </div>

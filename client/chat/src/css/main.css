@@ -41,6 +41,28 @@ a.button7 {
   position: relative;
   border: none;
 }
+.sendButton {
+  height: auto;
+  width: auto;
+  display: inline-block;
+  padding: 0.7em 1.7em;
+  border-radius: 0px 5px 5px 0px;
+  margin-right: 2%;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  background: linear-gradient(to left, #24243e, #141e30, #0f0c29);
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+  border: none;
+  font-size: 1em;
+}
 
 input {
   width: 75%;
@@ -141,17 +163,19 @@ a.button7:active {
   justify-content: start;
 }
 #chatBar {
+  width: 75%;
   white-space: nowrap;
   overflow: hidden;
   resize: none;
   border: 2px solid white;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #273857;
   color: white;
   height: 2em;
   font-size: 1em;
   padding-top: 2%;
+  margin-left: 2%;
 }
 #chatBar:focus {
   outline: none;
