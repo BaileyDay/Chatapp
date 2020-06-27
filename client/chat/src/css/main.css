@@ -140,7 +140,29 @@ a.button7:active {
 .welcomeMessage {
   justify-content: start;
 }
-
+#chatBar {
+  white-space: nowrap;
+  overflow: hidden;
+  resize: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #273857;
+  color: white;
+  height: 2em;
+  font-size: 1em;
+  padding-top: 2%;
+}
+#chatBar:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
 @media all and (max-width: 30em) {
    a.button7 {
     display: block;

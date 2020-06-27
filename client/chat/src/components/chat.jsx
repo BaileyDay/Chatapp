@@ -24,14 +24,13 @@ const Chat = () => {
     }
     fetchData();
   }, []);
-  console.log(state.username);
   return (
     <div>
       <h3 className="welcomeMessage">Welcome, {state.username}</h3>
       <div>
-        <form>
+        <form className="formContainer">
           <div>
-            <input></input>
+            <textarea id="chatBar" rows="1" cols="40"></textarea>
             <button>Send Message</button>
           </div>
         </form>
