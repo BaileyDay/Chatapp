@@ -41,6 +41,7 @@ const reducer = (state, action) => {
         ...payload,
         user: payload,
         message: "hello",
+        isAuthenticated: true,
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

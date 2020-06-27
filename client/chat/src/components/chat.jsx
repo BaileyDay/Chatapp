@@ -10,18 +10,21 @@ const Chat = () => {
   let history = useHistory();
 
   useEffect(() => {
+    let config = {
+      headers: {
+        "x-auth-token": state.token,
+      },
+    };
     async function fetchData() {
-      const result = await axios("http://localhost:3002/chat");
-      console.log(result);
+      const result = await axios("http://localhost:3002/chat", config);
       dispatch({
         type: "getUserData",
         payload: result.data,
       });
     }
-
     fetchData();
   }, []);
-
-  return <h3></h3>;
+  console.log(state.username);
+  return <h3>Welcome, {state.username}</h3>;
 };
 export default Chat;

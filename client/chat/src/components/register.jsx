@@ -28,7 +28,7 @@ function Register() {
           }
         })
         .catch(function (error) {
-          console.log(error.response.status);
+          console.log(error.response);
           if (error.response.status === 409) {
             dispatch({ type: "InvalidUsername" });
           }

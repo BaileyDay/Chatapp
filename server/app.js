@@ -4,10 +4,12 @@ const logger = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const MONGODB_URI =
   "***REMOVED***";
 
 const authRoutes = require("./routes/auth");
+const middleWare = require("./middleware/auth");
 
 const app = express();
 
@@ -19,6 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 app.use(authRoutes);
+app.use(middleWare);
 
 mongoose.connect(MONGODB_URI).catch((err) => {
   console.log(err);

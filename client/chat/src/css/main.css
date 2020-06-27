@@ -81,7 +81,9 @@ h1:after {
     20px 20px 20px rgba(0, 0, 0, 0.4), 30px 30px 30px rgba(0, 0, 0, 0.1);
   mix-blend-mode: multiply;
 }
-
+h3 {
+  color: white;
+}
 body {
   display: flex;
   justify-content: center;
