@@ -14,7 +14,7 @@ const Chat = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3002/chat", {
+      .post("/chat", {
         username: state.username,
         message: message,
       })
@@ -36,7 +36,7 @@ const Chat = () => {
       },
     };
     async function fetchData() {
-      const result = await axios("http://localhost:3002/chat", config);
+      const result = await axios("/chat", config);
       dispatch({
         type: "getUserData",
         payload: result.data,
@@ -48,9 +48,7 @@ const Chat = () => {
 
   useEffect(() => {
     async function fetchData() {
-      await axios
-        .get("http://localhost:3002/chatmessages")
-        .then((result) => setData(result.data));
+      await axios.get("/chatmessages").then((result) => setData(result.data));
     }
 
     fetchData();

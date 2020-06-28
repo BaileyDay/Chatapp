@@ -16,7 +16,7 @@ function Register() {
     e.preventDefault();
     if (password === confirmPassword) {
       axios
-        .post("http://localhost:3002/register", {
+        .post("/register", {
           username: username,
           password: password,
         })
