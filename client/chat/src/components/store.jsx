@@ -24,7 +24,7 @@ const reducer = (state, action) => {
       };
     case "InvalidUsername":
       return {
-        errorMessage: "Username is already taken, please try again.",
+        errorMessage: "Invalid Username or password, please try again.",
       };
     case "loginSucceeded":
       localStorage.setItem("token", payload.token);

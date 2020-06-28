@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from "react-router-dom";
 import "./App.css";
@@ -16,7 +15,7 @@ import Chat from "../src/components/chat";
 import { useStore } from "./components/store";
 
 function PrivateRoute({ children, ...rest }) {
-  const { state, dispatch } = useStore();
+  const { state } = useStore();
   return (
     <Route
       {...rest}

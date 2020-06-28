@@ -9,7 +9,6 @@ const Login = () => {
   const [password, setPassword] = useState(0);
   const { state, dispatch } = useStore();
   let history = useHistory();
-  console.log(state);
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -29,7 +28,7 @@ const Login = () => {
       })
       .catch(function (error) {
         console.log(error.response.status);
-        if (error.response.status === 409) {
+        if (error.response.status === 400) {
           dispatch({ type: "InvalidUsername" });
         }
       });
@@ -39,6 +38,9 @@ const Login = () => {
       <div className="container">
         <h1 className="loginLogo">Login</h1>
         {state.message && <h3 className="loginMessage">{state.message}</h3>}
+        {state.errorMessage && (
+          <h3 className="errorMessage">{state.errorMessage}</h3>
+        )}
         <form>
           <div>
             <input

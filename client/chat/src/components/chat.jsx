@@ -9,7 +9,6 @@ const Chat = () => {
   const [message, setMessage] = useState(0);
   const [data, setData] = useState(0);
   let history = useHistory();
-  console.log(state);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -45,11 +44,11 @@ const Chat = () => {
     }
 
     fetchData();
-  }, [state.token]);
+  }, [state.token, dispatch]);
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios
+      await axios
         .get("http://localhost:3002/chatmessages")
         .then((result) => setData(result.data));
     }
@@ -73,8 +72,8 @@ const Chat = () => {
       <div>
         {data && (
           <div className="messageContainer">
-            {data.map((user) => (
-              <div className="singleMessage">
+            {data.map((user, id) => (
+              <div className="singleMessage" key={id}>
                 <div>
                   <p className="messageUsername">{user.username}</p>
                 </div>
