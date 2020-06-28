@@ -9,6 +9,7 @@ const Chat = () => {
   const [message, setMessage] = useState(0);
   const [data, setData] = useState(0);
   let history = useHistory();
+  console.log(state);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -55,13 +56,19 @@ const Chat = () => {
 
     fetchData();
   }, []);
-  console.log(data);
+
+  const logout = () => {
+    dispatch({
+      type: "logout",
+    });
+    history.push("/login");
+  };
 
   return (
     <div>
       <div className="chatHeader">
         <h3 className="welcomeMessage">Welcome, {state.username}</h3>
-        <button>Logout</button>
+        <button onClick={logout}>Logout</button>
       </div>
       <div>
         {data && (

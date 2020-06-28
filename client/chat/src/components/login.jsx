@@ -9,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState(0);
   const { state, dispatch } = useStore();
   let history = useHistory();
+  console.log(state);
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -20,9 +21,11 @@ const Login = () => {
       .then(function (response) {
         console.log(response);
         if (response.status === 200) {
-          history.push("/chat");
           dispatch({ type: "loginSucceeded", payload: response.data });
         }
+      })
+      .then(() => {
+        history.push("/chat");
       })
       .catch(function (error) {
         console.log(error.response.status);

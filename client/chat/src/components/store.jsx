@@ -42,6 +42,13 @@ const reducer = (state, action) => {
         user: payload,
         isAuthenticated: true,
       };
+    case "logout":
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+      };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
