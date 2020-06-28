@@ -9,7 +9,6 @@ const MONGODB_URI =
 
 const authRoutes = require("./routes/auth");
 const messageRoutes = require("./routes/message");
-const middleWare = require("./middleware/auth");
 
 const app = express();
 
@@ -22,7 +21,6 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 app.use(cors());
 app.use(authRoutes);
 app.use(messageRoutes);
-app.use(middleWare);
 
 mongoose.connect(MONGODB_URI).catch((err) => {
   console.log(err);
