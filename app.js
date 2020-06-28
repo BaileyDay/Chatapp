@@ -4,7 +4,6 @@ const logger = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const MONGODB_URI =
   "***REMOVED***";
 
@@ -27,6 +26,11 @@ app.use(middleWare);
 
 mongoose.connect(MONGODB_URI).catch((err) => {
   console.log(err);
+});
+
+const port = process.env.PORT || 3002;
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
 
 module.exports = app;
