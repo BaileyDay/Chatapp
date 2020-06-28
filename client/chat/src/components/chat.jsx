@@ -59,7 +59,10 @@ const Chat = () => {
 
   return (
     <div>
-      <h3 className="welcomeMessage">Welcome, {state.username}</h3>
+      <div className="chatHeader">
+        <h3 className="welcomeMessage">Welcome, {state.username}</h3>
+        <button>Logout</button>
+      </div>
       <div>
         {data && (
           <div className="messageContainer">

@@ -159,9 +159,7 @@ a.button7:active {
   padding: 5%;
   border-radius: 5px;
 }
-.welcomeMessage {
-  justify-content: start;
-}
+
 #chatBar {
   width: 75%;
   white-space: nowrap;
@@ -221,6 +219,31 @@ input:focus {
 .userMessage {
   padding-bottom: 15%;
   padding-left: 5%;
+}
+
+.chatHeader {
+  display: flex;
+}
+.chatHeader h3 {
+  margin-left: 2%;
+}
+.chatHeader button {
+  margin-left: auto;
+  margin-right: 10%;
+  height: 30px;
+  margin-top: 4%;
+  width: 30%;
+  text-decoration: none;
+  font-family: "Sriracha";
+  font-weight: 400;
+  color: #ffffff;
+  background: linear-gradient(to left, #24243e, #141e30, #0f0c29);
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+  border: none;
 }
 @media all and (max-width: 30em) {
    a.button7 {
