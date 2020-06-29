@@ -35,8 +35,7 @@ const Chat = () => {
         "x-auth-token": state.token,
       },
     };
-    console.log(state.token);
-    if (state.token) {
+    try {
       async function fetchData() {
         const result = await axios("/chat", config);
         dispatch({
@@ -44,8 +43,9 @@ const Chat = () => {
           payload: result.data,
         });
       }
-
       fetchData();
+    } catch (error) {
+      console.error(error);
     }
   }, [state.token, dispatch]);
 
