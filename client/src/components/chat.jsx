@@ -35,15 +35,18 @@ const Chat = () => {
         "x-auth-token": state.token,
       },
     };
-    async function fetchData() {
-      const result = await axios("/chat", config);
-      dispatch({
-        type: "getUserData",
-        payload: result.data,
-      });
-    }
+    console.log(state.token);
+    if (state.token) {
+      async function fetchData() {
+        const result = await axios("/chat", config);
+        dispatch({
+          type: "getUserData",
+          payload: result.data,
+        });
+      }
 
-    fetchData();
+      fetchData();
+    }
   }, [state.token, dispatch]);
 
   useEffect(() => {
