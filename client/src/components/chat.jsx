@@ -32,21 +32,6 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    try {
-      async function fetchData() {
-        const result = await axios.get("/chat");
-        dispatch({
-          type: "getUserData",
-          payload: result.data,
-        });
-      }
-      fetchData();
-    } catch (error) {
-      console.error(error);
-    }
-  }, [state.token, dispatch]);
-
-  useEffect(() => {
     async function fetchData() {
       await axios.get("/chatmessages").then((result) => setData(result.data));
     }
