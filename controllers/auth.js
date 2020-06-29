@@ -1,6 +1,8 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+require("dotenv").config();
+const bcryptSecret = process.env.secret;
 
 exports.postSignup = (req, res, next) => {
   const username = req.body.username;
@@ -27,7 +29,7 @@ exports.postSignup = (req, res, next) => {
 exports.getUserData = async (req, res, next) => {
   try {
     const token = req.header("x-auth-token");
-    const decoded = jwt.verify(token, "secret");
+    const decoded = jwt.verify(token, bcryptSecret);
     req.user = decoded.user;
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
@@ -53,7 +55,7 @@ exports.postLogin = async (req, res, next) => {
         id: user.id,
       },
     };
-    jwt.sign(payload, "secret", { expiresIn: 36000 }, (err, token) => {
+    jwt.sign(payload, bcryptSecret, { expiresIn: 36000 }, (err, token) => {
       if (err) throw err;
       res.json({ token });
       res.status(200);

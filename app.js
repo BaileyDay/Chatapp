@@ -4,8 +4,8 @@ const logger = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const MONGODB_URI =
-  "***REMOVED***";
+require("dotenv").config();
+const MONGODB_URI = process.env.mongo;
 
 const authRoutes = require("./routes/auth");
 const messageRoutes = require("./routes/message");
