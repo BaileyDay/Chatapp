@@ -10,6 +10,8 @@ const Chat = () => {
   const [data, setData] = useState(0);
   let history = useHistory();
 
+  axios.defaults.headers.common["x-auth-token"] = state.token;
+
   const sendMessage = (e) => {
     e.preventDefault();
 
@@ -30,14 +32,9 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    let config = {
-      headers: {
-        "x-auth-token": state.token,
-      },
-    };
     try {
       async function fetchData() {
-        const result = await axios("/chat", config);
+        const result = await axios("/chat");
         dispatch({
           type: "getUserData",
           payload: result.data,
