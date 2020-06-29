@@ -34,7 +34,7 @@ const Chat = () => {
   useEffect(() => {
     try {
       async function fetchData() {
-        const result = await axios("/chat");
+        const result = await axios.get("/chat");
         dispatch({
           type: "getUserData",
           payload: result.data,
