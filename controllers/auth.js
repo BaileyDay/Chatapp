@@ -26,6 +26,9 @@ exports.postSignup = (req, res, next) => {
 
 exports.getUserData = async (req, res, next) => {
   try {
+    const token = req.header("x-auth-token");
+    const decoded = jwt.verify(token, "secret");
+    req.user = decoded.user;
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
   } catch (err) {
