@@ -10,7 +10,7 @@ const Chat = () => {
   const [data, setData] = useState(0);
   let history = useHistory();
 
-  axios.defaults.headers.common["x-auth-token"] = state.token;
+  axios.defaults.headers.common["x-auth-token"] = localStorage.getItem("token");
 
   const sendMessage = (e) => {
     e.preventDefault();
