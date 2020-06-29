@@ -31,7 +31,6 @@ exports.getUserData = async (req, res, next) => {
   } catch (err) {
     console.error(err.message);
   }
-  console.log(user);
 };
 
 exports.postLogin = async (req, res, next) => {
