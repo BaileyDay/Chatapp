@@ -4,7 +4,7 @@ const auth = require("../middleware/auth");
 
 const messageController = require("../controllers/message");
 
-router.post("/chat", messageController.postMessage);
-router.get("/chatmessages", messageController.getAllMessages);
+router.post("/api/chat", messageController.postMessage);
+router.get("/api/chatmessages", messageController.getAllMessages);
 
 module.exports = router;

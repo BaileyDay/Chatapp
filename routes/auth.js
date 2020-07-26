@@ -4,8 +4,8 @@ const auth = require("../middleware/auth");
 
 const authController = require("../controllers/auth");
 
-router.post("/register", authController.postSignup);
+router.post("/api/register", authController.postSignup);
 router.get("/api/chat", authController.getUserData);
-router.post("/login", authController.postLogin);
+router.post("/api/login", authController.postLogin);
 
 module.exports = router;

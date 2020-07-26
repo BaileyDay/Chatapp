@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  ##########################
+  ### SETUP SERVER CONTAINER
+  ##########################
+  server:
+    # Tells docker-compose which image to pull from docker hub
+    image: baileyday/chatappserver
+    environment:
+      - mongo=${mongo}
+      - secret=${secret}
+    ports:
+      - 5000:5000
+    command: node app.js
+    restart: always
+  ##########################
+  ### SETUP CLIENT CONTAINER
+  ##########################
+  client:
+    image: baileyday/chatapp
+    enviroment:
+      - VIRTUAL_HOST=chatapp.baileyday.dev
+      - LETSENCRYPT_HOST=chatapp.baileyday.dev
+    ports:
+      - 3000:80
+    links:
+      - server
+    restart: always

@@ -16,7 +16,7 @@ function Register() {
     e.preventDefault();
     if (password === confirmPassword) {
       axios
-        .post("/register", {
+        .post("/api/register", {
           username: username,
           password: password,
         })

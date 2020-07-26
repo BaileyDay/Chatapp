@@ -16,7 +16,7 @@ const Chat = () => {
     e.preventDefault();
 
     axios
-      .post("/chat", {
+      .post("/api/chat", {
         username: state.username,
         message: message,
       })
@@ -48,7 +48,9 @@ const Chat = () => {
 
   useEffect(() => {
     async function fetchData() {
-      await axios.get("/chatmessages").then((result) => setData(result.data));
+      await axios
+        .get("/api/chatmessages")
+        .then((result) => setData(result.data));
     }
 
     fetchData();

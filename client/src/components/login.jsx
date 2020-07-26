@@ -13,7 +13,7 @@ const Login = () => {
   const loginUser = (e) => {
     e.preventDefault();
     axios
-      .post("/login", {
+      .post("/api/login", {
         username: username,
         password: password,
       })
