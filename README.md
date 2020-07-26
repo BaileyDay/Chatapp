@@ -43,7 +43,7 @@
     Simple chat interface built on the MERN stack for API and Authentication practice.
     <br />
     <br />
-    <a href="https://chat-app-project12.herokuapp.com/">Check out the Live Version</a>
+    <a href="https://chatapp.baileyday.dev">Check out the Live Version</a>
   </p>
 </p>
 
