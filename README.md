@@ -33,7 +33,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo">
+  <a href="https://github.com/baileyday/pokefind">
     <img src="images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
