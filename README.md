@@ -51,7 +51,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <p align="center">
- <img src="https://media.giphy.com/media/Lo6vPjP7Hf4urruJjn/giphy.gif" width="300" height="350" />
+ <img src="/ezgif.com-optimize.gif?raw=true" width="750px">
 </p>
 A small application built on the MERN stack to help me get a better grasp and understanding of working with the backend. Including API's and authentication.
 
